@@ -3,7 +3,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import conectarBD from './db/db.js';
 
-
 dotenv.config();
 
 const app = express();
