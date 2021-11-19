@@ -4,6 +4,7 @@ import { tiposUsuario } from '../models/usuario/tipos.js';
 import { tiposProyecto } from '../models/proyecto/tipos.js';
 import { tiposAvance } from '../models/avance/tipos.js';
 
+
 const tiposGlobales = gql`
   scalar Date
 `;

@@ -25,6 +25,7 @@ const tiposEnums = gql`
     GENERAL
     ESPECIFICO
   }
+    
 `;
 
 export { tiposEnums };
