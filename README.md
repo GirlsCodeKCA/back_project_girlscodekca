@@ -17,7 +17,7 @@ Para el backend se utilizo MongoDB, Express.js, React y Node.js.
 [![Metodolog-a-Figura1-1.png](https://i.postimg.cc/SsVnNnsm/Metodolog-a-Figura1-1.png)](https://postimg.cc/k66JTXKH)
 
 ## **REPOSITORIO DEL BACKEND**
-[Repositorio en GitHub-Frontend](https://github.com/GirlsCodeKCA/back_project_girlscodekca)
+[Repositorio en GitHub-Backend](https://github.com/GirlsCodeKCA/back_project_girlscodekca)
 
 ## TABLERO DE TRABAJO EN TRELLO:
 [Tablero en Trello](https://trello.com/b/E8PLlLxf/website-to-manage-research-projects)
