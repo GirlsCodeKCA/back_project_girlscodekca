@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
 import { ProjectModel } from '../proyecto/proyecto.js';
 import { UserModel } from '../usuario/usuario.js';
+
 const { Schema, model } = mongoose;
 
-const avanceSchema = new mongoose.Schema({
+const avanceSchema = new Schema({
   fecha: {
     type: Date,
     required: true,
