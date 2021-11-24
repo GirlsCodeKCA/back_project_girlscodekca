@@ -1,6 +1,6 @@
 import { UserModel } from '../../models/usuario/usuario.js';
 import bcrypt from 'bcrypt';
-import { generateToken } from '../../utils/tokenUtils.js';
+import { generateToken } from '../../token/tokenUtils.js';
 
 const resolversAutenticacion = {
   Mutation: {
