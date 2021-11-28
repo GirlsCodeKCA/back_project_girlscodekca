@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { ObjectiveModel } from '../objective.js';
 import { UserModel } from '../usuario/usuario.js';
 const { Schema, model } = mongoose;
 
