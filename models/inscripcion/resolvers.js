@@ -11,6 +11,7 @@ const resolverInscripciones = {
     crearInscripcion: async (parent, args) => {
       const inscripcionCreada = await InscriptionModel.create({
         estado: args.estado,
+        fechaIngreso: Date.now(),
         proyecto: args.proyecto,
         estudiante: args.estudiante,
       });

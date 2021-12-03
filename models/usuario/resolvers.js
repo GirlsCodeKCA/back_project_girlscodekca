@@ -19,10 +19,11 @@ const resolversUsuario = {
       return usuarios;
     },
     Usuario: async (parent, args) => {
-      const usuario = await UserModel.findOne({ _id: args._id });
+      const usuario = await UserModel.findOne({_id: args._id});
       return usuario;
-    },
+    },  
   },
+      
   Mutation: {
     crearUsuario: async (parent, args) => {
       const salt = await bcrypt.genSalt(10);
