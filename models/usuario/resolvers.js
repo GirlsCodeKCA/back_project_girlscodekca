@@ -1,27 +1,23 @@
 import { UserModel } from './usuario.js';
 import bcrypt from 'bcrypt';
+import { InscriptionModel } from '../inscripcion/inscripcion.js';
 
 const resolversUsuario = {
+  Usuario: {
+    inscripciones: async (parent, args, context) => {
+      return InscriptionModel.find({ estudiante: parent._id });
+    },
+  },
   Query: {
-    Usuarios: async (parent, args) => {
-      const usuarios = await UserModel.find().populate([
-        {
-          path: 'inscripciones',
-          populate: {
-            path: 'proyecto',
-            populate: [{ path: 'lider' }, { path: 'avances' }],
-          },
-        },
-        {
-          path: 'proyectosLiderados',
-        },
-      ]);
+    Usuarios: async (parent, args, context) => {
+      console.log(args);
+      const usuarios = await UserModel.find({ ...args.filtro });
       return usuarios;
     },
     Usuario: async (parent, args) => {
-      const usuario = await UserModel.findOne({_id: args._id});
+      const usuario = await UserModel.findOne({ _id: args._id });
       return usuario;
-    },  
+    },
   },
       
   Mutation: {
