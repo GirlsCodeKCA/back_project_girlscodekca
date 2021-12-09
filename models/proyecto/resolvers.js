@@ -1,3 +1,5 @@
+import { InscriptionModel } from '../inscripcion/inscripcion.js';
+import { UserModel } from '../usuario/usuario.js';
 import { ProjectModel } from './proyecto.js';
 
 const resolversProyecto = {
