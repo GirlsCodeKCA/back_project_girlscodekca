@@ -19,7 +19,14 @@ const resolversProyecto = {
   },
   Query: {
     Proyectos: async (parent, args, context) => {
-      const proyectos = await ProjectModel.find().populate('avances').populate('inscripciones');
+      if (context.userData) {
+        if (context.userData.rol === 'LIDER') {
+          const proyectos = await ProjectModel.find({ lider: context.userData._id });
+          console.log('es lider de', proyectos);
+          return proyectos;
+        }
+      }
+      const proyectos = await ProjectModel.find();
       return proyectos;
     },
     Proyecto: async (parent, args) => {

@@ -31,6 +31,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  foto: {
+    type: String,
+    required: false,
+  },
   rol: {
     type: String,
     required: true,

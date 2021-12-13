@@ -19,7 +19,6 @@ const resolversUsuario = {
       return usuario;
     },
   },
-      
   Mutation: {
     crearUsuario: async (parent, args) => {
       const salt = await bcrypt.genSalt(10);
@@ -52,6 +51,14 @@ const resolversUsuario = {
         { new: true }
       );
 
+      return usuarioEditado;
+    },
+    editarPerfil: async (parent, args) => {
+      const usuarioEditado = await UserModel.findOneAndUpdate(
+        args._id,
+        { ...args.campos },
+        { new: true }
+      );
       return usuarioEditado;
     },
     eliminarUsuario: async (parent, args) => {
