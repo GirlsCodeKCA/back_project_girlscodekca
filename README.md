@@ -1,4 +1,4 @@
-# **BACKEND - GESTION DE PROYECTOS - CICLO IV**
+# **PROJECT UNIVERSE**
 ## **GIRLS CODE KCA**
 
 |**AUTORES** | **ROLES** | 
@@ -7,7 +7,7 @@
 |**[Keidy Mercado Sierra](https://github.com/kemesy07)**  | Product Owner - Analista - Desarrolladora |
 
 ## **DESCRIPCION DEL PROYECTO**
-Aplicativo de software que permite la gestión de proyectos de investigación. 
+Project Universe es una pagina web que permite la gestión de proyectos de investigación. 
 
 ## **DESCRIPCION DEL BACKEND**
 ## MERN
