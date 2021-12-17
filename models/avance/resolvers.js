@@ -1,11 +1,14 @@
+import { ProjectModel } from '../proyecto/proyecto.js';
 import { ModeloAvance } from './avance.js';
 
 const resolversAvance = {
   Query: {
     Avances: async (parent, args) => {
-      const avances = await ModeloAvance.find()
-      .populate('proyecto')
-      .populate('creadoPor');
+      let filter = {};
+      if (args.project) {
+        filter = { ...args };
+      }
+      const avances = await ModeloAvance.find(filter).populate('proyecto').populate('creadoPor');
       return avances;
     },
     filtrarAvance: async (parents, args) => {
@@ -17,26 +20,27 @@ const resolversAvance = {
   },
   Mutation: {
     crearAvance: async (parents, args) => {
-      const avanceCreado = ModeloAvance.create({
+      const avanceCreado = await ModeloAvance.create({
         fecha: args.fecha,
         descripcion: args.descripcion,
         proyecto: args.proyecto,
         observaciones: args.observaciones,
         creadoPor: args.creadoPor,
       });
-      return avanceCreado;
-    },
-    editarAvance: async (parent, args) => {
-      const avanceEditado = await ModeloAvance.findByIdAndUpdate(
-        args._id,
-        {
-          descripcion: args.descripcion,
-          observaciones: args.observaciones,
-        },
-        { new: true }
-      );
 
-      return avanceEditado;
+      const avances = await ModeloAvance.find({ proyecto: avanceCreado.proyecto });
+
+      if (avances.length === 1) {
+        const proyectoModificado = await ProjectModel.findOneAndUpdate(
+          { _id: avanceCreado.proyecto },
+          {
+            fase: 'DESARROLLO',
+          }
+        );
+        console.log('proy modificado', proyectoModificado);
+      }
+
+      return avanceCreado;
     },
   },
 };

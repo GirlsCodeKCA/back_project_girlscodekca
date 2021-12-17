@@ -25,6 +25,10 @@ const resolversProyecto = {
           console.log('es lider de', proyectos);
           return proyectos;
         }
+        else if (context.userData.rol === 'LIDER') {
+          // const proyectos = await ProjectModel.find({ lider: context.userData._id });
+          // return proyectos;
+        }
       }
       const proyectos = await ProjectModel.find();
       return proyectos;
