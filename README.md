@@ -27,5 +27,5 @@ Para el backend se utilizo MongoDB, Express.js, React y Node.js.
 ## **COMANDOS PARA EJECUTAR LA APP**
 En nuestro equipo de trabajo se utilizo MERN Stack, y su comando de ejecución es yarn start.
 
-### `yarn start`
+### `yarn dev`
 
